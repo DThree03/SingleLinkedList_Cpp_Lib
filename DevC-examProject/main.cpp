@@ -16,10 +16,11 @@ int main() {
 		cout<<"Pos add out!"<<endl;
 	}
 	
-	if(list1.deleteAt(2) == pos_out){
+	if(list1.deleteAt(5) == pos_out){
 		cout<<"Pos del out!"<<endl;
 	}
-	
+	printf("Lenght of list: %d", list1.getLenght());
+	cout<<endl;
 	list1.tempList = list1.head;
 	
 	while(list1.tempList!=list1.tail->next){

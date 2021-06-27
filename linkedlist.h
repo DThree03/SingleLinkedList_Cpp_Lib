@@ -128,6 +128,16 @@ class linkedList
 				delete temp;
 			}
 		}
+		int getLenght()
+		{
+			int k = 1;
+			point p = head;
+			while(p!= tail){
+				p = p->next;
+				k++;
+			}
+			return k;
+		}
 	private:
 		point getNode(T x)
 		{
