@@ -138,6 +138,49 @@ class linkedList
 			}
 			return k;
 		}
+		T getData(int pos)
+		{
+			if((pos == 0)&&(head != NULL)){
+				return head->data;
+			}
+			else if(head == NULL){
+				return (T)0;
+			}
+			int k = 2;
+			point p = head->next;
+			while((p != tail)&&(k<=pos)){
+				p = p->next;
+				k++;
+			}
+			if((p==tail)&&(k<=pos)){
+				return (T)0;
+			}
+			
+			return p->data;
+		}
+		void getBuffer(int pos, T *buff, int lenght)
+		{
+			if(head == NULL){
+				return;
+			}
+			int k = 1;
+			point p = head;
+			while((p != tail)&&(k<=pos)){
+				p = p->next;
+				k++;
+			}
+			
+			k = 0;
+			while((p != tail)&&(k<lenght)){
+				buff[k] = p->data;
+				k++;
+				p = p->next;
+			}
+			if((k<lenght)&&(p==tail)){
+				buff[k] = p->data;
+			}
+		}
+		
 	private:
 		point getNode(T x)
 		{
